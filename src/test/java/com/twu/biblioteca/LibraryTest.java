@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.*;
 
 class LibraryTest {
 
@@ -32,5 +33,15 @@ class LibraryTest {
         ArrayList<Book> actualBooks = library.listBooks();
 
         assertThat(actualBooks, is(equalTo(expectedBooks)));
+    }
+
+    @Test
+    public void shouldSelectListBooksMenuOption() {
+        Library library = mock(Library.class);
+        Menu menu = new Menu();
+
+        menu.selectOption(new ListBooksOption(library));
+
+        verify(library, times(1)).listBooks();
     }
 }
