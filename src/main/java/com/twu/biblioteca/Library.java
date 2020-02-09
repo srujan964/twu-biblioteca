@@ -10,7 +10,9 @@ public class Library {
 
     public Library() {
         books = new ArrayList<>() {{
-            add(new Book("Pet Sematary"));
+            add(new Book("Pet Sematary", "Stephen King", 1983));
+            add(new Book("Sharp Objects", "Gillian Flynn", 2006));
+            add(new Book("The Handmaid's Tale", "Margaret Atwood", 1985));
         }};
     }
 
