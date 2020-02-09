@@ -6,14 +6,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-class BibliotecaAppTest {
+class LibraryTest {
 
     @Test
     public void shouldGreet() {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        Library library = new Library();
         String expectedGreeting = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
 
-        String actualGreeting = bibliotecaApp.greet();
+        String actualGreeting = library.greet();
 
         assertThat(actualGreeting, is(equalTo(expectedGreeting)));
     }
