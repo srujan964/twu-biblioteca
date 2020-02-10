@@ -22,7 +22,9 @@ public class BibliotecaApp {
 
             int option = scanner.nextInt();
             if (option == 1) {
-                ArrayList<Book> books = (ArrayList<Book>) menu.selectOption(new ListBooksOption(library));
+                ListBooksOption listBooksOption = new ListBooksOption(library);
+                menu.selectOption(listBooksOption);
+                ArrayList<Book> books = listBooksOption.getResult();
                 System.out.println("\nList of Books:\n");
                 System.out.printf("\t%20s\t|\t%20s\t|\t%10s\n\n", "Title", "Author", "Year Published");
                 for (Book book : books) {

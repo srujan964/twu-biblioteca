@@ -40,7 +40,8 @@ class LibraryTest {
         Library library = mock(Library.class);
         Menu menu = new Menu();
 
-        menu.selectOption(new ListBooksOption(library));
+        ListBooksOption listBooksOption = new ListBooksOption(library);
+        menu.selectOption(listBooksOption);
 
         verify(library, times(1)).listBooks();
     }
