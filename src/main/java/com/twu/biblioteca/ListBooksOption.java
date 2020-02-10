@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
-public class ListBooksOption implements Command {
+// Job: Represent a menu option to list all the books.
+public class ListBooksOption implements MenuOption {
     private final UserInterface userInterface;
 
     public ListBooksOption(UserInterface userInterface) {

@@ -22,11 +22,11 @@ public class Library {
         books.remove(book);
     }
 
-    public Book find(String title) {
+    public Book find(String title) throws UnknownBookException {
         for (Book book : books) {
             if (book.getTitle().equals(title))
                 return book;
         }
-        return null;
+        throw new UnknownBookException();
     }
 }

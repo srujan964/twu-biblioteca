@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
-public interface Command {
+// Represent a menu option.
+public interface MenuOption {
     void execute(Library library);
 
     String description();

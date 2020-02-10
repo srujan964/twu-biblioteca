@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class QuitApplicationOption implements Command {
+public class QuitApplicationOption implements MenuOption {
     private final UserInterface userInterface;
 
     public QuitApplicationOption(UserInterface userInterface) {

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import static com.twu.biblioteca.Message.WELCOME_GREETING;
 
+// Job: Represent the command-line interface of Biblioteca.
 public class BibliotecaApp implements UserInterface {
     Scanner scanner;
 
@@ -29,6 +30,11 @@ public class BibliotecaApp implements UserInterface {
         } while (true);
     }
 
+    public void quit() {
+        scanner.close();
+        System.exit(0);
+    }
+
     private int getOption(Menu menu) {
         while (!scanner.hasNextInt()) {
             scanner.next();
@@ -36,11 +42,6 @@ public class BibliotecaApp implements UserInterface {
             System.out.println(menu);
         }
         return scanner.nextInt();
-    }
-
-    public void quit() {
-        scanner.close();
-        System.exit(0);
     }
 
     @Override

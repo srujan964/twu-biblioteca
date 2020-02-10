@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class Menu {
-    private final ArrayList<Command> options;
+    private final ArrayList<MenuOption> options;
     private final Library library;
     private final UserInterface userInterface;
 
@@ -29,10 +29,10 @@ public class Menu {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nMENU:\n");
-        for (Command command : options) {
-            sb.append(options.indexOf(command) + 1)
+        for (MenuOption menuOption : options) {
+            sb.append(options.indexOf(menuOption) + 1)
                     .append(". ")
-                    .append(command.description())
+                    .append(menuOption.description())
                     .append("\n");
         }
         sb.append("\nSelect an option:");

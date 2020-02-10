@@ -2,7 +2,8 @@ package com.twu.biblioteca;
 
 import static com.twu.biblioteca.Message.*;
 
-public class CheckOutBookOption implements Command {
+// Job: Represent a menu option to checkout a book.
+public class CheckOutBookOption implements MenuOption {
     private final UserInterface userInterface;
 
     public CheckOutBookOption(UserInterface userInterface) {
@@ -12,7 +13,13 @@ public class CheckOutBookOption implements Command {
     @Override
     public void execute(Library library) {
         String bookTitle = userInterface.promptForBookName();
-        Book book = library.find(bookTitle);
+        Book book = null;
+        try {
+            book = library.find(bookTitle);
+        } catch (UnknownBookException e) {
+            userInterface.displayMessage(UNSUCCESSFUL_CHECKOUT.getValue());
+            return;
+        }
         library.checkout(book);
         userInterface.displayMessage(SUCCESSFUL_CHECKOUT.getValue());
     }

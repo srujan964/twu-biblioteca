@@ -29,4 +29,11 @@ class MessageTest {
 
         assertThat(SUCCESSFUL_CHECKOUT.getValue(), is(equalTo(expectedCheckoutMessage)));
     }
+
+    @Test
+    public void shouldDisplayUnsuccessfulCheckoutMessage() {
+        String expectedCheckoutMessage = "Sorry, that book is not available";
+
+        assertThat(UNSUCCESSFUL_CHECKOUT.getValue(), is(equalTo(expectedCheckoutMessage)));
+    }
 }
