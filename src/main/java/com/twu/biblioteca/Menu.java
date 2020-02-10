@@ -11,15 +11,30 @@ public class Menu {
         this.userInterface = userInterface;
         options = new ArrayList<>() {{
             add(new ListBooksOption(userInterface));
+            add(new QuitApplicationOption(userInterface));
         }};
         this.library = library;
     }
 
     public void selectOption(int optionNumber) {
-        if (optionNumber > options.size()) {
+        if (optionNumber >= options.size()) {
             userInterface.displayMessage(Message.INVALID_OPTION.getValue());
             return;
         }
         options.get(optionNumber).execute(library);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nMENU:\n");
+        for (Command command : options) {
+            sb.append(options.indexOf(command) + 1)
+                    .append(". ")
+                    .append(command.description())
+                    .append("\n");
+        }
+        sb.append("\nSelect an option:");
+        return sb.toString();
     }
 }

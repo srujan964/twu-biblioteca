@@ -5,7 +5,7 @@ public enum Message {
     INVALID_OPTION("Please select a valid option!");
     private final String value;
 
-    private Message(String value) {
+    Message(String value) {
         this.value = value;
     }
 

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 // Job: Represent a library.
 public class Library {
-    private static final String WELCOME_GREETING = "Welcome to Biblioteca. " +
-            "Your one-stop-shop for great book titles in Bangalore!";
-
     private final ArrayList<Book> books;
 
     public Library() {
@@ -21,7 +18,4 @@ public class Library {
         return books;
     }
 
-    public String greet() {
-        return WELCOME_GREETING;
-    }
 }

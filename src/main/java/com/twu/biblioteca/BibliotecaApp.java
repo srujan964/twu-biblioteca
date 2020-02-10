@@ -3,6 +3,8 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.twu.biblioteca.Message.WELCOME_GREETING;
+
 public class BibliotecaApp implements UserInterface {
 
     public static void main(String[] args) {
@@ -13,25 +15,23 @@ public class BibliotecaApp implements UserInterface {
     public void start() {
         Library library = new Library();
         Scanner scanner = new Scanner(System.in);
-        System.out.println(library.greet() + "\n");
+        System.out.println(WELCOME_GREETING.getValue() + "\n");
 
         Menu menu = new Menu(this, library);
         do {
-            printMenu();
+            System.out.println(menu);
             while (!scanner.hasNextInt()) {
                 scanner.next();
                 System.out.println(Message.INVALID_OPTION.getValue());
-                printMenu();
+                System.out.println(menu);
             }
             int option = scanner.nextInt();
             menu.selectOption(option - 1);
         } while (true);
     }
 
-    private static void printMenu() {
-        System.out.println("\nMENU");
-        System.out.println("1. List Books.");
-        System.out.println("\nSelect an option: ");
+    public void quit() {
+        System.exit(0);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class BibliotecaApp implements UserInterface {
     @Override
     public void displayListOfBooks(ArrayList<Book> books) {
         System.out.println("\nList Of Books:\n");
-        System.out.printf("\t%20s\t|\t%20s\t|%10s\n\n", "Title", "Author", "Year Published");
+        System.out.printf("\t%20s\t|\t%20s\t|\t%10s\n\n", "Title", "Author", "Year Published");
         for (Book book : books) {
             System.out.printf("\t%20s\t|\t%20s\t|\t\t%10d\n",
                     book.getTitle(), book.getAuthor(), book.getYearPublished());

@@ -1,19 +1,19 @@
 package com.twu.biblioteca;
 
-public class ListBooksOption implements Command {
+public class QuitApplicationOption implements Command {
     private final UserInterface userInterface;
 
-    public ListBooksOption(UserInterface userInterface) {
+    public QuitApplicationOption(UserInterface userInterface) {
         this.userInterface = userInterface;
     }
 
     @Override
     public void execute(Library library) {
-        userInterface.displayListOfBooks(library.listBooks());
+        userInterface.quit();
     }
 
     @Override
     public String description() {
-        return "List of Books";
+        return "Quit Application";
     }
 }
