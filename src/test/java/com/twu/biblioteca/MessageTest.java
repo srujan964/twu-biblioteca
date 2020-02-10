@@ -2,8 +2,7 @@ package com.twu.biblioteca;
 
 import org.junit.jupiter.api.Test;
 
-import static com.twu.biblioteca.Message.INVALID_OPTION;
-import static com.twu.biblioteca.Message.WELCOME_GREETING;
+import static com.twu.biblioteca.Message.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -22,5 +21,12 @@ class MessageTest {
         String expectedInvalidOptionMessage = "Please select a valid option!";
 
         assertThat(INVALID_OPTION.getValue(), is(equalTo(expectedInvalidOptionMessage)));
+    }
+
+    @Test
+    public void shouldDisplaySuccessfulCheckoutMessage() {
+        String expectedCheckoutMessage = "Thank you! Enjoy the book";
+
+        assertThat(SUCCESSFUL_CHECKOUT.getValue(), is(equalTo(expectedCheckoutMessage)));
     }
 }

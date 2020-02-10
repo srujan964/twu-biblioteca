@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import static com.twu.biblioteca.Message.*;
+
 public class CheckOutBookOption implements Command {
     private final UserInterface userInterface;
 
@@ -12,6 +14,7 @@ public class CheckOutBookOption implements Command {
         String bookTitle = userInterface.promptForBookName();
         Book book = library.find(bookTitle);
         library.checkout(book);
+        userInterface.displayMessage(SUCCESSFUL_CHECKOUT.getValue());
     }
 
     @Override
