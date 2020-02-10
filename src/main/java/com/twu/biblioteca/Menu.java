@@ -1,8 +1,19 @@
 package com.twu.biblioteca;
 
-public class Menu {
+import java.util.ArrayList;
 
-    public void selectOption(Command command) {
-        command.execute();
+public class Menu {
+    private final ArrayList<Command> options;
+    private final Library library;
+
+    public Menu(UserInterface userInterface ,Library library) {
+        options = new ArrayList<>() {{
+            add(new ListBooksOption(userInterface, library));
+        }};
+        this.library = library;
+    }
+
+    public void selectOption(int optionNumber) {
+        options.get(optionNumber).execute(library);
     }
 }

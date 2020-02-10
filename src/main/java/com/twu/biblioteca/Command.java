@@ -1,5 +1,5 @@
 package com.twu.biblioteca;
 
 public interface Command {
-    void execute();
+    void execute(Library library);
 }

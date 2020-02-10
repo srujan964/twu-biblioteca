@@ -1,22 +1,16 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-
 public class ListBooksOption implements Command {
+    private final UserInterface userInterface;
     private final Library library;
-    private ArrayList<Book> result;
 
-    public ListBooksOption(Library library) {
+    public ListBooksOption(UserInterface userInterface, Library library) {
+        this.userInterface = userInterface;
         this.library = library;
-        result = new ArrayList<>();
-    }
-
-    public ArrayList<Book> getResult() {
-        return result;
     }
 
     @Override
-    public void execute() {
-        result = library.listBooks();
+    public void execute(Library library) {
+        userInterface.displayListOfBooks(library.listBooks());
     }
 }

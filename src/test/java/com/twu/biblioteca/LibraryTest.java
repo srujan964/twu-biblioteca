@@ -37,11 +37,11 @@ class LibraryTest {
 
     @Test
     public void shouldSelectListBooksMenuOption() {
+        UserInterface userInterface = mock(UserInterface.class);
         Library library = mock(Library.class);
-        Menu menu = new Menu();
+        Menu menu = new Menu(userInterface, library);
 
-        ListBooksOption listBooksOption = new ListBooksOption(library);
-        menu.selectOption(listBooksOption);
+        menu.selectOption(0);
 
         verify(library, times(1)).listBooks();
     }
