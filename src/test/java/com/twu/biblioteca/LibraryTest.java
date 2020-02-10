@@ -7,19 +7,8 @@ import java.util.ArrayList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.*;
 
 class LibraryTest {
-
-    @Test
-    public void shouldGreet() {
-        Library library = new Library();
-        String expectedGreeting = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
-
-        String actualGreeting = library.greet();
-
-        assertThat(actualGreeting, is(equalTo(expectedGreeting)));
-    }
 
     @Test
     public void shouldReturnBookList() {
@@ -33,16 +22,5 @@ class LibraryTest {
         ArrayList<Book> actualBooks = library.listBooks();
 
         assertThat(actualBooks, is(equalTo(expectedBooks)));
-    }
-
-    @Test
-    public void shouldSelectListBooksMenuOption() {
-        UserInterface userInterface = mock(UserInterface.class);
-        Library library = mock(Library.class);
-        Menu menu = new Menu(userInterface, library);
-
-        menu.selectOption(0);
-
-        verify(library, times(1)).listBooks();
     }
 }

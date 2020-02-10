@@ -2,11 +2,9 @@ package com.twu.biblioteca;
 
 public class ListBooksOption implements Command {
     private final UserInterface userInterface;
-    private final Library library;
 
-    public ListBooksOption(UserInterface userInterface, Library library) {
+    public ListBooksOption(UserInterface userInterface) {
         this.userInterface = userInterface;
-        this.library = library;
     }
 
     @Override

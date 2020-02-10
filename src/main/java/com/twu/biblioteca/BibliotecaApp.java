@@ -20,12 +20,11 @@ public class BibliotecaApp implements UserInterface {
             printMenu();
             while (!scanner.hasNextInt()) {
                 scanner.next();
+                System.out.println(Message.INVALID_OPTION.getValue());
                 printMenu();
             }
             int option = scanner.nextInt();
-            if (option == 1) {
-                menu.selectOption(option - 1);
-            }
+            menu.selectOption(option - 1);
         } while (true);
     }
 
@@ -33,6 +32,11 @@ public class BibliotecaApp implements UserInterface {
         System.out.println("\nMENU");
         System.out.println("1. List Books.");
         System.out.println("\nSelect an option: ");
+    }
+
+    @Override
+    public void displayMessage(String message) {
+        System.out.println(message);
     }
 
     @Override
