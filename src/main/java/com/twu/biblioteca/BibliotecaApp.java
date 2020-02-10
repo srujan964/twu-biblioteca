@@ -6,6 +6,11 @@ import java.util.Scanner;
 import static com.twu.biblioteca.Message.WELCOME_GREETING;
 
 public class BibliotecaApp implements UserInterface {
+    Scanner scanner;
+
+    public BibliotecaApp() {
+        scanner = new Scanner(System.in);
+    }
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
@@ -14,24 +19,35 @@ public class BibliotecaApp implements UserInterface {
 
     public void start() {
         Library library = new Library();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(WELCOME_GREETING.getValue() + "\n");
+        System.out.println(WELCOME_GREETING.getValue());
 
         Menu menu = new Menu(this, library);
         do {
             System.out.println(menu);
-            while (!scanner.hasNextInt()) {
-                scanner.next();
-                System.out.println(Message.INVALID_OPTION.getValue());
-                System.out.println(menu);
-            }
-            int option = scanner.nextInt();
+            int option = getOption(menu);
             menu.selectOption(option - 1);
         } while (true);
     }
 
+    private int getOption(Menu menu) {
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+            System.out.println(Message.INVALID_OPTION.getValue());
+            System.out.println(menu);
+        }
+        return scanner.nextInt();
+    }
+
     public void quit() {
+        scanner.close();
         System.exit(0);
+    }
+
+    @Override
+    public String promptForBookName() {
+        System.out.println("\nEnter the name of the book to checkout:");
+        scanner.nextLine();
+        return scanner.nextLine();
     }
 
     @Override

@@ -11,6 +11,7 @@ public class Menu {
         this.userInterface = userInterface;
         options = new ArrayList<>() {{
             add(new ListBooksOption(userInterface));
+            add(new CheckOutBookOption(userInterface));
             add(new QuitApplicationOption(userInterface));
         }};
         this.library = library;

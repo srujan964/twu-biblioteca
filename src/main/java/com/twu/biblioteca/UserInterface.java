@@ -8,4 +8,6 @@ public interface UserInterface {
     void displayMessage(String message);
 
     void quit();
+
+    String promptForBookName();
 }

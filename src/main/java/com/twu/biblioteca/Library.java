@@ -18,4 +18,15 @@ public class Library {
         return books;
     }
 
+    public void checkout(Book book) {
+        books.remove(book);
+    }
+
+    public Book find(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equals(title))
+                return book;
+        }
+        return null;
+    }
 }

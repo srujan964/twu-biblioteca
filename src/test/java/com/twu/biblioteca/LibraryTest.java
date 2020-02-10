@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class LibraryTest {
 
@@ -22,5 +23,16 @@ class LibraryTest {
         ArrayList<Book> actualBooks = library.listBooks();
 
         assertThat(actualBooks, is(equalTo(expectedBooks)));
+    }
+
+    @Test
+    public void shouldCheckoutMethod() {
+        Library library = new Library();
+        Book petSematary = new Book("Pet Sematary", "Stephen King", 1983);
+        library.checkout(petSematary);
+        ArrayList<Book> books = library.listBooks();
+
+        System.out.println(petSematary);
+        assertFalse(books.contains(petSematary));
     }
 }
