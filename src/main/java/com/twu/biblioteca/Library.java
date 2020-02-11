@@ -21,12 +21,12 @@ public class Library {
         return availableBooks;
     }
 
-    public void checkout(Book book) {
+    void checkout(Book book) {
         checkedOutBooks.add(book);
         availableBooks.remove(book);
     }
 
-    public Book findInAvailable(String title) throws UnknownBookException {
+    Book findInAvailable(String title) throws UnknownBookException {
         for (Book book : availableBooks) {
             if (book.getTitle().equals(title))
                 return book;
@@ -34,12 +34,12 @@ public class Library {
         throw new UnknownBookException();
     }
 
-    public void returnBook(Book book) {
+    void returnBook(Book book) {
         checkedOutBooks.remove(book);
         availableBooks.add(book);
     }
 
-    public Book findInCheckedOut(String title) throws UnknownBookException {
+    Book findInCheckedOut(String title) throws UnknownBookException {
         for (Book book : checkedOutBooks) {
             if (book.getTitle().equals(title))
                 return book;
