@@ -1,8 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.logic.Library;
-import com.twu.biblioteca.menu.ListBooksOption;
-import com.twu.biblioteca.ui.UserInterface;
+import com.twu.biblioteca.logic.menu.ListBooksOption;
+import com.twu.biblioteca.logic.UserInterface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

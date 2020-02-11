@@ -1,6 +1,6 @@
 package com.twu.biblioteca.logic;
 
-import com.twu.biblioteca.exceptions.UnknownBookException;
+import com.twu.biblioteca.logic.exceptions.UnknownBookException;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.twu.biblioteca.menu;
+package com.twu.biblioteca.logic.menu;
 
 import com.twu.biblioteca.logic.Library;
 

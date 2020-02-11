@@ -1,7 +1,7 @@
-package com.twu.biblioteca.menu;
+package com.twu.biblioteca.logic.menu;
 
-import com.twu.biblioteca.ui.UserInterface;
-import com.twu.biblioteca.exceptions.UnknownBookException;
+import com.twu.biblioteca.logic.UserInterface;
+import com.twu.biblioteca.logic.exceptions.UnknownBookException;
 import com.twu.biblioteca.logic.Book;
 import com.twu.biblioteca.logic.Library;
 

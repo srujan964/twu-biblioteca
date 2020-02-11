@@ -1,8 +1,9 @@
-package com.twu.biblioteca.ui;
+package com.twu.biblioteca.consoleui;
 
 import com.twu.biblioteca.logic.Book;
 import com.twu.biblioteca.logic.Library;
-import com.twu.biblioteca.menu.Menu;
+import com.twu.biblioteca.logic.UserInterface;
+import com.twu.biblioteca.logic.menu.Menu;
 import com.twu.biblioteca.logic.Message;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class BibliotecaApp implements UserInterface {
         System.out.println(WELCOME_GREETING.getValue());
 
         Menu menu = new Menu(this, library);
+        //noinspection InfiniteLoopStatement
         do {
             System.out.println(menu);
             int option = getOption(menu);
