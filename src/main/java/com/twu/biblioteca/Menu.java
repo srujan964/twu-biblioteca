@@ -12,6 +12,7 @@ public class Menu {
         options = new ArrayList<>() {{
             add(new ListBooksOption(userInterface));
             add(new CheckOutBookOption(userInterface));
+            add(new ReturnBookOption(userInterface));
             add(new QuitApplicationOption(userInterface));
         }};
         this.library = library;

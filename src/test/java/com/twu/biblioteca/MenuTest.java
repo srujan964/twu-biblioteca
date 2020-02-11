@@ -27,7 +27,7 @@ class MenuTest {
 
     @Test
     public void shouldQuitApplication() {
-        menu.selectOption(2);
+        menu.selectOption(3);
 
         verify(userInterface, times(1)).quit();
     }

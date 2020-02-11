@@ -15,7 +15,7 @@ public class CheckOutBookOption implements MenuOption {
         String bookTitle = userInterface.promptForBookName();
         Book book = null;
         try {
-            book = library.find(bookTitle);
+            book = library.findInAvailable(bookTitle);
         } catch (UnknownBookException e) {
             userInterface.displayMessage(UNSUCCESSFUL_CHECKOUT.getValue());
             return;

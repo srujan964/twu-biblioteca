@@ -46,7 +46,7 @@ public class BibliotecaApp implements UserInterface {
 
     @Override
     public String promptForBookName() {
-        System.out.println("\nEnter the name of the book to checkout:");
+        System.out.println("\nEnter the name of the book:");
         scanner.nextLine();
         return scanner.nextLine();
     }
