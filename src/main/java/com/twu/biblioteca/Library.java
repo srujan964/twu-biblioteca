@@ -39,11 +39,11 @@ public class Library {
         availableBooks.add(book);
     }
 
-    public Book findInCheckedOut(String title) {
+    public Book findInCheckedOut(String title) throws UnknownBookException {
         for (Book book : checkedOutBooks) {
             if (book.getTitle().equals(title))
                 return book;
         }
-        return null;
+        throw new UnknownBookException();
     }
 }

@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import static com.twu.biblioteca.Message.SUCCESSFUL_RETURN;
+import static com.twu.biblioteca.Message.*;
 
 // Job: Represent a menu option to return a book.
 public class ReturnBookOption implements MenuOption {
@@ -13,7 +13,13 @@ public class ReturnBookOption implements MenuOption {
     @Override
     public void execute(Library library) {
         String bookTitle = userInterface.promptForBookName();
-        Book book = library.findInCheckedOut(bookTitle);
+        Book book = null;
+        try {
+            book = library.findInCheckedOut(bookTitle);
+        } catch (UnknownBookException e) {
+            userInterface.displayMessage(UNSUCCESSFUL_RETURN.getValue());
+            return;
+        }
         library.returnBook(book);
         userInterface.displayMessage(SUCCESSFUL_RETURN.getValue());
     }

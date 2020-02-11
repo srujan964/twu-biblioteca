@@ -44,4 +44,10 @@ class MessageTest {
         assertThat(SUCCESSFUL_RETURN.getValue(), is(equalTo(expectedReturnMessage)));
     }
 
+    @Test
+    public void shouldDisplayUnsuccessfulReturnMessage() {
+        String expectedReturnMessage = "That is not a valid book to return";
+
+        assertThat(UNSUCCESSFUL_RETURN.getValue(), is(equalTo(expectedReturnMessage)));
+    }
 }
