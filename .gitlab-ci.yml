@@ -11,12 +11,17 @@ image: openjdk:12
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
 
+stages:
+  - build
+  - test
+
 before_script:
   - echo "Start CI"
+  - chmod +x gradlew
 
 build:
   stage: build
-  script: ./gradlew assemble
+  script: ./gradlew clean assemble
 
 test:
   stage: test
