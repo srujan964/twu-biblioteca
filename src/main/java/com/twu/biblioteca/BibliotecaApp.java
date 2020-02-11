@@ -45,15 +45,35 @@ public class BibliotecaApp implements UserInterface {
     }
 
     @Override
+    public void handleInvalidOption() {
+        System.out.println(Message.INVALID_OPTION.getValue());
+    }
+
+    @Override
+    public void handleSuccessfulCheckout() {
+        System.out.println(Message.SUCCESSFUL_CHECKOUT.getValue());
+    }
+
+    @Override
+    public void handleUnsuccessfulCheckout() {
+        System.out.println(Message.UNSUCCESSFUL_CHECKOUT.getValue());
+    }
+
+    @Override
+    public void handleSuccessfulReturn() {
+        System.out.println(Message.SUCCESSFUL_RETURN.getValue());
+    }
+
+    @Override
+    public void handleUnsuccessfulReturn() {
+        System.out.println(Message.UNSUCCESSFUL_RETURN.getValue());
+    }
+
+    @Override
     public String promptForBookName() {
         System.out.println("\nEnter the name of the book:");
         scanner.nextLine();
         return scanner.nextLine();
-    }
-
-    @Override
-    public void displayMessage(String message) {
-        System.out.println(message);
     }
 
     @Override

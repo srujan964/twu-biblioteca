@@ -20,7 +20,7 @@ public class Menu {
 
     public void selectOption(int optionNumber) {
         if (optionNumber >= options.size()) {
-            userInterface.displayMessage(Message.INVALID_OPTION.getValue());
+            userInterface.handleInvalidOption();
             return;
         }
         options.get(optionNumber).execute(library);

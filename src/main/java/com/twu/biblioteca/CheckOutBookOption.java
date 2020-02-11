@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import static com.twu.biblioteca.Message.*;
-
 // Job: Represent a menu option to checkout a book.
 public class CheckOutBookOption implements MenuOption {
     private final UserInterface userInterface;
@@ -17,11 +15,11 @@ public class CheckOutBookOption implements MenuOption {
         try {
             book = library.findInAvailable(bookTitle);
         } catch (UnknownBookException e) {
-            userInterface.displayMessage(UNSUCCESSFUL_CHECKOUT.getValue());
+            userInterface.handleUnsuccessfulCheckout();
             return;
         }
         library.checkout(book);
-        userInterface.displayMessage(SUCCESSFUL_CHECKOUT.getValue());
+        userInterface.handleSuccessfulCheckout();
     }
 
     @Override

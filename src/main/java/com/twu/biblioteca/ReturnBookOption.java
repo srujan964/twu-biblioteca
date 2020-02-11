@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import static com.twu.biblioteca.Message.*;
-
 // Job: Represent a menu option to return a book.
 public class ReturnBookOption implements MenuOption {
     private final UserInterface userInterface;
@@ -17,11 +15,11 @@ public class ReturnBookOption implements MenuOption {
         try {
             book = library.findInCheckedOut(bookTitle);
         } catch (UnknownBookException e) {
-            userInterface.displayMessage(UNSUCCESSFUL_RETURN.getValue());
+            userInterface.handleUnsuccessfulReturn();
             return;
         }
         library.returnBook(book);
-        userInterface.displayMessage(SUCCESSFUL_RETURN.getValue());
+        userInterface.handleSuccessfulReturn();
     }
 
     @Override
