@@ -1,9 +1,14 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.ui;
+
+import com.twu.biblioteca.logic.Book;
+import com.twu.biblioteca.logic.Library;
+import com.twu.biblioteca.menu.Menu;
+import com.twu.biblioteca.logic.Message;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.Message.WELCOME_GREETING;
+import static com.twu.biblioteca.logic.Message.WELCOME_GREETING;
 
 // Job: Represent the command-line interface of Biblioteca.
 public class BibliotecaApp implements UserInterface {

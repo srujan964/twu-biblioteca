@@ -1,5 +1,10 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.exceptions.UnknownBookException;
+import com.twu.biblioteca.logic.Book;
+import com.twu.biblioteca.logic.Library;
+import com.twu.biblioteca.menu.ReturnBookOption;
+import com.twu.biblioteca.ui.UserInterface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

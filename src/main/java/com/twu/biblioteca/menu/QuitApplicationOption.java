@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menu;
+
+import com.twu.biblioteca.ui.UserInterface;
+import com.twu.biblioteca.logic.Library;
 
 public class QuitApplicationOption implements MenuOption {
     private final UserInterface userInterface;

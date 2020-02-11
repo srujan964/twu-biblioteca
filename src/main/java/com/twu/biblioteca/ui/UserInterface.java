@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.ui;
+
+import com.twu.biblioteca.logic.Book;
 
 import java.util.ArrayList;
 

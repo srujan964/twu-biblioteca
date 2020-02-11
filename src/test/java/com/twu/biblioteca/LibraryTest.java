@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.logic.Book;
+import com.twu.biblioteca.logic.Library;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

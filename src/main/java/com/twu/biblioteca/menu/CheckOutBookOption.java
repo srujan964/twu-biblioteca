@@ -1,4 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menu;
+
+import com.twu.biblioteca.ui.UserInterface;
+import com.twu.biblioteca.exceptions.UnknownBookException;
+import com.twu.biblioteca.logic.Book;
+import com.twu.biblioteca.logic.Library;
 
 // Job: Represent a menu option to checkout a book.
 public class CheckOutBookOption implements MenuOption {

@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 import org.junit.jupiter.api.Test;
 
-import static com.twu.biblioteca.Message.*;
+import static com.twu.biblioteca.logic.Message.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;

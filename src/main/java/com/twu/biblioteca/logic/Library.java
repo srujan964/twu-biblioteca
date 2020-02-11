@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.logic;
+
+import com.twu.biblioteca.exceptions.UnknownBookException;
 
 import java.util.ArrayList;
 
@@ -21,12 +23,12 @@ public class Library {
         return availableBooks;
     }
 
-    void checkout(Book book) {
+    public void checkout(Book book) {
         checkedOutBooks.add(book);
         availableBooks.remove(book);
     }
 
-    Book findInAvailable(String title) throws UnknownBookException {
+    public Book findInAvailable(String title) throws UnknownBookException {
         for (Book book : availableBooks) {
             if (book.getTitle().equals(title))
                 return book;
@@ -34,12 +36,12 @@ public class Library {
         throw new UnknownBookException();
     }
 
-    void returnBook(Book book) {
+    public void returnBook(Book book) {
         checkedOutBooks.remove(book);
         availableBooks.add(book);
     }
 
-    Book findInCheckedOut(String title) throws UnknownBookException {
+    public Book findInCheckedOut(String title) throws UnknownBookException {
         for (Book book : checkedOutBooks) {
             if (book.getTitle().equals(title))
                 return book;

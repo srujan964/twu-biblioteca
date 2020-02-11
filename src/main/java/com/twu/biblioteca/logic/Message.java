@@ -1,7 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.logic;
 
 // Job: Represent a message to be displayed to the user.
-enum Message {
+public enum Message {
     WELCOME_GREETING("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!"),
     INVALID_OPTION("Please select a valid option!"),
     SUCCESSFUL_CHECKOUT("Thank you! Enjoy the book"),

@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menu;
+
+import com.twu.biblioteca.ui.UserInterface;
+import com.twu.biblioteca.logic.Library;
 
 // Job: Represent a menu option to list all the books.
 public class ListBooksOption implements MenuOption {
