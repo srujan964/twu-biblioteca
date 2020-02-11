@@ -36,4 +36,12 @@ class MessageTest {
 
         assertThat(UNSUCCESSFUL_CHECKOUT.getValue(), is(equalTo(expectedCheckoutMessage)));
     }
+
+    @Test
+    public void shouldDisplaySuccessfulReturnMessage() {
+        String expectedReturnMessage = "Thank you for returning the book";
+
+        assertThat(SUCCESSFUL_RETURN.getValue(), is(equalTo(expectedReturnMessage)));
+    }
+
 }

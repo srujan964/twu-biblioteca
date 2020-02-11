@@ -5,7 +5,8 @@ enum Message {
     WELCOME_GREETING("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!"),
     INVALID_OPTION("Please select a valid option!"),
     SUCCESSFUL_CHECKOUT("Thank you! Enjoy the book"),
-    UNSUCCESSFUL_CHECKOUT("Sorry, that book is not available");
+    UNSUCCESSFUL_CHECKOUT("Sorry, that book is not available"),
+    SUCCESSFUL_RETURN("Thank you for returning the book");
 
     private final String value;
 
