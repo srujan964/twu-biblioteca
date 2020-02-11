@@ -7,7 +7,7 @@ import static com.twu.biblioteca.Message.WELCOME_GREETING;
 
 // Job: Represent the command-line interface of Biblioteca.
 public class BibliotecaApp implements UserInterface {
-    Scanner scanner;
+    private Scanner scanner;
 
     public BibliotecaApp() {
         scanner = new Scanner(System.in);
