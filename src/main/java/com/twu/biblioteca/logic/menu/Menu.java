@@ -10,14 +10,9 @@ public class Menu {
     private final Library library;
     private final UserInterface userInterface;
 
-    public Menu(UserInterface userInterface, Library library) {
+    public Menu(ArrayList<MenuOption> options, UserInterface userInterface, Library library) {
+        this.options = options;
         this.userInterface = userInterface;
-        options = new ArrayList<>() {{
-            add(new ListBooksOption(userInterface));
-            add(new CheckOutBookOption(userInterface));
-            add(new ReturnBookOption(userInterface));
-            add(new QuitApplicationOption(userInterface));
-        }};
         this.library = library;
     }
 

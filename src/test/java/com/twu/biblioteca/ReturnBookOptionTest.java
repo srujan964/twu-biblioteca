@@ -23,7 +23,7 @@ class ReturnBookOptionTest {
     void setUp() {
         library = mock(Library.class);
         userInterface = mock(UserInterface.class);
-        returnBookOption = new ReturnBookOption(userInterface);
+        returnBookOption = new ReturnBookOption("Return a book", userInterface);
     }
 
     @Test

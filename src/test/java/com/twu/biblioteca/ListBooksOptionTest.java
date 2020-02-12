@@ -14,14 +14,13 @@ import static org.mockito.Mockito.*;
 class ListBooksOptionTest {
 
     private Library library;
-    private UserInterface userInterface;
     private ListBooksOption listBooksOption;
 
     @BeforeEach
     void setUp() {
         library = mock(Library.class);
-        userInterface = mock(UserInterface.class);
-        listBooksOption = new ListBooksOption(userInterface);
+        UserInterface userInterface = mock(UserInterface.class);
+        listBooksOption = new ListBooksOption("List Books", userInterface);
     }
 
     @Test
@@ -33,7 +32,7 @@ class ListBooksOptionTest {
 
     @Test
     public void shouldReturnDescription() {
-        String expectedDescription = "List of Books";
+        String expectedDescription = "List Books";
 
         String actualDescription = listBooksOption.description();
 

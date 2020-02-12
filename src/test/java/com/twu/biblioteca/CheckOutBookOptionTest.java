@@ -23,7 +23,7 @@ class CheckOutBookOptionTest {
     void setUp() {
         library = mock(Library.class);
         userInterface = mock(UserInterface.class);
-        checkOutBookOption = new CheckOutBookOption(userInterface);
+        checkOutBookOption = new CheckOutBookOption("Checkout a book", userInterface);
     }
 
     @Test

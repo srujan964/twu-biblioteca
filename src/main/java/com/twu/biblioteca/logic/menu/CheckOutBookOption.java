@@ -6,10 +6,11 @@ import com.twu.biblioteca.logic.Book;
 import com.twu.biblioteca.logic.Library;
 
 // Job: Represent a menu option to checkout a book.
-public class CheckOutBookOption implements MenuOption {
+public class CheckOutBookOption extends MenuOption {
     private final UserInterface userInterface;
 
-    public CheckOutBookOption(UserInterface userInterface) {
+    public CheckOutBookOption(String description, UserInterface userInterface) {
+        super(description);
         this.userInterface = userInterface;
     }
 
@@ -25,10 +26,5 @@ public class CheckOutBookOption implements MenuOption {
         }
         library.checkout(book);
         userInterface.handleSuccessfulCheckout();
-    }
-
-    @Override
-    public String description() {
-        return "Checkout a book";
     }
 }

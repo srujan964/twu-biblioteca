@@ -22,7 +22,7 @@ class QuitApplicationOptionTest {
     void setUp() {
         library = mock(Library.class);
         userInterface = mock(UserInterface.class);
-        quitApplicationOption = new QuitApplicationOption(userInterface);
+        quitApplicationOption = new QuitApplicationOption("Quit Application", userInterface);
     }
 
     @Test

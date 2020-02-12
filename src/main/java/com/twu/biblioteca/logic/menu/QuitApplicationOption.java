@@ -3,20 +3,16 @@ package com.twu.biblioteca.logic.menu;
 import com.twu.biblioteca.logic.UserInterface;
 import com.twu.biblioteca.logic.Library;
 
-public class QuitApplicationOption implements MenuOption {
+public class QuitApplicationOption extends MenuOption {
     private final UserInterface userInterface;
 
-    public QuitApplicationOption(UserInterface userInterface) {
+    public QuitApplicationOption(String description, UserInterface userInterface) {
+        super(description);
         this.userInterface = userInterface;
     }
 
     @Override
     public void execute(Library library) {
         userInterface.quit();
-    }
-
-    @Override
-    public String description() {
-        return "Quit Application";
     }
 }

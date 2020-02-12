@@ -6,10 +6,11 @@ import com.twu.biblioteca.logic.Book;
 import com.twu.biblioteca.logic.Library;
 
 // Job: Represent a menu option to return a book.
-public class ReturnBookOption implements MenuOption {
+public class ReturnBookOption extends MenuOption {
     private final UserInterface userInterface;
 
-    public ReturnBookOption(UserInterface userInterface) {
+    public ReturnBookOption(String description, UserInterface userInterface) {
+        super(description);
         this.userInterface = userInterface;
     }
 
@@ -25,10 +26,5 @@ public class ReturnBookOption implements MenuOption {
         }
         library.returnBook(book);
         userInterface.handleSuccessfulReturn();
-    }
-
-    @Override
-    public String description() {
-        return "Return a book";
     }
 }
